@@ -1,0 +1,1 @@
+pyinstaller --onefile --noconsole --icon=Rinkore28.ico --add-data "Rinkore28.ico;." DBDAFK.py
