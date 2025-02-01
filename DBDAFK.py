@@ -67,6 +67,17 @@ threshold_adjustment = 0.0
 consecutive_turns = 0
 consecutive_no_turns = 0
 
+# ====== Tesseract路径配置 ======
+if getattr(sys, 'frozen', False):
+    base_path = sys._MEIPASS
+else:
+    base_path = os.path.dirname(os.path.abspath(__file__))
+
+# 设置Tesseract路径
+tesseract_dir = os.path.join(base_path, 'tesseract')
+pytesseract.pytesseract.tesseract_cmd = os.path.join(tesseract_dir, 'tesseract.exe')
+os.environ['TESSDATA_PREFIX'] = os.path.join(tesseract_dir, 'tessdata')
+
 # ====== 日志配置 ======
 def setup_logging():
     logger = logging.getLogger()
