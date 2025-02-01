@@ -22,7 +22,7 @@ DEBUG_LOG_DIR = os.path.join(DEBUG_DIR, "logs")
 DEBUG_IMAGE_DIR = os.path.join(DEBUG_DIR, "images")
 
 # ====== 全局配置 ======
-DEBUG_MODE = False
+DEBUG_MODE = True
 exit_flag = False
 movement_lock = threading.Lock()
 number_recognition_enabled = True
@@ -361,8 +361,8 @@ def process_continue(screenshot):
 def process_buttons(screenshot):
     buttons = [
         ('ok', '好的'),
-        ('start', '开始'),
-        ('killer', '杀手')
+        ('killer', '杀手'),
+        ('start', '开始')
     ]
     for btn_type, text in buttons:
         raw = ocr_text(screenshot, region_config[btn_type])
